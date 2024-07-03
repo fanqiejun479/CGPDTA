@@ -1,0 +1,37 @@
+{
+	"name": "test_DTA",
+	"clique_type": "BRICS",
+	"split_type": "random",
+
+	"graph_e_type": "GCN",
+	"pocket_e_type": "GRU",
+
+	"dmodel_type": "ChemBERTa",
+	"pmodel_type": "esm1",
+
+	"d_model_name" : "ChemBERTa",
+	"p_model_name" : "esm1_t12_85M_UR50S/esm1_t12_85M_UR50S.pt",
+
+	"gpu_ids" : 2,
+	"model_mode" : "test",
+	"k_fold" : 2,
+	"load_d_model" : "pretrain_CCI_ChemBERTa_TrueToTrue_5e-06_9095/epoch=15-step=99744.ckpt",
+	"load_p_model" : "pretrain_PPI_esm1_TrueToTrue_5e-06_9095/epoch=10-step=66044.ckpt",
+	"load_checkpoint" : "train_DTA_k-fold-1_BRICS_random_GCN_GRU_TrueToTrue_5e-06_9095/epoch=15_valid_loss=0.638_valid_rmse=1.2545.ckpt",
+
+	"drug_maxlength" : 92,
+	"prot_maxlength" : 260,
+	"pock_maxlength" : 66,
+	"max_epoch": 150,
+	"batch_size": 24,
+	"num_workers": 8,
+
+	"task_name" : "8bju",
+	"lr": 5e-6,
+	"loss_fn" : "smooth",
+
+	"traindata_rate" : 1.0,
+	"pretrained": {"chem": "True","prot": "True"},
+	"num_seed" : 9095
+}
+
